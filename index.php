@@ -24,9 +24,8 @@
 	</style>
 </head>
 
-<body class="relative h-full">
+<body class="h-full">
 	<div class="lineTop w-screen opacity-50 top-[calc(100vh*0.092592)]"></div>
-	<div class="lineTop w-screen opacity-50 bottom-[calc(100vh*0.907)]"></div>
 	<div class="lineLeft h-screen opacity-50 left-[calc(100vw*0.084375)]"></div>
 	<div class="lineLeft opacity-50 left-[calc(100vw*0.3265625)] h-[calc(100vh*0.813888)] top-[calc(100vh*0.093)]">
 	</div>
@@ -72,10 +71,10 @@
 
 			<!-- Actions -->
 			<div class="flex items-center gap-[30px] md:hidden -translate-y-4">
-				<a href="#" class="flex items-center gap-1">
+				<a href="auth.php?log=2" class="flex items-center gap-1">
 					<span class="font-bold text-[25px] leading-[22px]">вход</span>
 				</a>
-				<a href="#" class="flex items-center gap-1">
+				<a href="auth.php?log=1" class="flex items-center gap-1">
 					<span
 						class="font-bold text-[25px] bg-[#2563EB] rounded-[50px] py-[9px] px-[15px] leading-[32px] text-white">регистрация</span>
 				</a>

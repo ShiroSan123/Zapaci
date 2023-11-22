@@ -3,6 +3,10 @@ module.exports = {
 	content: [
 		'./index.php',
 		'./list.php',
+		'./add.php',
+		'./auth.php',
+		'./calc.php',
+		'./list.php',
 		'./src/**/*.{html,js,php}'
 	],
 	theme: {
