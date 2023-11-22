@@ -1,3 +1,17 @@
+<?php
+include('server.php');
+session_start();
+
+if(isset($_SESSION['phone'])){
+	$_SESSION['msg'] = "You must log in first to view this page";
+}
+
+if(isset($_GET['logout'])){
+	session_destroy();
+	unset($_SESSION['phone']);
+	header("location: auth.php?log=2");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,9 +38,8 @@
 	</style>
 </head>
 
-<body class="relative h-full">
+<body class="h-full">
 	<div class="lineTop w-screen opacity-50 top-[calc(100vh*0.092592)]"></div>
-	<div class="lineTop w-screen opacity-50 bottom-[calc(100vh*0.907)]"></div>
 	<div class="lineLeft h-screen opacity-50 left-[calc(100vw*0.084375)]"></div>
 	<div class="lineLeft opacity-50 left-[calc(100vw*0.3265625)] h-[calc(100vh*0.813888)] top-[calc(100vh*0.093)]">
 	</div>
@@ -47,39 +60,44 @@
 			<nav class="sm:hidden">
 				<ul class="flex items-center gap-[20px]">
 					<li>
-						<a href="add.php?tag=1"
-							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] after:scale-0 hover:after:scale-100 after:transition-transform">добавление</a>
+
+						<a href="list.php?tag=1"
+							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 1) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">список</a>
 					</li>
 					<li>
 
-						<a href="list.php?tag=2"
-							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] after:scale-0 hover:after:scale-100 after:transition-transform">список</a>
-					</li>
-					<li>
-
-						<a href="calc.php?tag=3"
-							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] after:scale-0 hover:after:scale-100 after:transition-transform">калькулятор
+						<a href="calc.php?tag=2"
+							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 2) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">калькулятор
 						</a>
 					</li>
 					<li>
 
-						<a href="recom.php?tag=4"
-							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] after:scale-0 hover:after:scale-100 after:transition-transform">рекомендации
+						<a href="recom.php?tag=3"
+							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 3) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">рекомендации
 						</a>
 					</li>
 				</ul>
 			</nav>
 
 			<!-- Actions -->
+			<!-- Check for auth -->
+			<?php if(isset($_SESSION['phone'])){ ?>
 			<div class="flex items-center gap-[30px] md:hidden -translate-y-4">
-				<a href="#" class="flex items-center gap-1">
+				<a href="Profile.php" class="flex items-center gap-1">
+					<span class="font-bold text-[25px] bg-[#2563EB] rounded-[50px] py-[9px] px-[15px] leading-[32px] text-white"><?php echo $stroka['Name'] ?></span>
+				</a>
+			</div>
+			<?php } else { ?>
+			<div class="flex items-center gap-[30px] md:hidden -translate-y-4">
+				<a href="auth.php?log=2" class="flex items-center gap-1">
 					<span class="font-bold text-[25px] leading-[22px]">вход</span>
 				</a>
-				<a href="#" class="flex items-center gap-1">
+				<a href="auth.php?log=1" class="flex items-center gap-1">
 					<span
 						class="font-bold text-[25px] bg-[#2563EB] rounded-[50px] py-[9px] px-[15px] leading-[32px] text-white">регистрация</span>
 				</a>
 			</div>
+			<?php }?>
 		</header>
 
 		<section class="mt-[244.5px] mx-auto text-center max-w-[1144px] max-h-[320px]">

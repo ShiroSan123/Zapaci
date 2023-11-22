@@ -3,7 +3,10 @@ module.exports = {
 	content: [
 		'./index.php',
 		'./list.php',
-		'./src/**/*.{html,js,php}'
+		'./add.php',
+		'./auth.php',
+		'./calc.php',
+		'./recom.php',
 	],
 	theme: {
 		screens: {

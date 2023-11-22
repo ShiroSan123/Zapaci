@@ -597,8 +597,24 @@ video {
   margin-top: 2rem;
 }
 
+.mt-\[117px\]{
+  margin-top: 117px;
+}
+
+.mt-\[11px\]{
+  margin-top: 11px;
+}
+
+.mt-\[12px\]{
+  margin-top: 12px;
+}
+
 .mt-\[244\.5px\]{
   margin-top: 244.5px;
+}
+
+.mt-\[30px\]{
+  margin-top: 30px;
 }
 
 .mt-\[31px\]{
@@ -607,6 +623,18 @@ video {
 
 .flex{
   display: flex;
+}
+
+.h-\[137px\]{
+  height: 137px;
+}
+
+.h-\[49px\]{
+  height: 49px;
+}
+
+.h-\[800px\]{
+  height: 800px;
 }
 
 .h-\[calc\(100vh\*0\.813888\)\]{
@@ -623,6 +651,18 @@ video {
 
 .max-h-\[320px\]{
   max-height: 320px;
+}
+
+.w-\[232px\]{
+  width: 232px;
+}
+
+.w-\[535px\]{
+  width: 535px;
+}
+
+.w-\[653px\]{
+  width: 653px;
 }
 
 .w-\[818px\]{
@@ -696,8 +736,17 @@ video {
   border-radius: 50px;
 }
 
+.border{
+  border-width: 1px;
+}
+
 .border-\[1px\]{
   border-width: 1px;
+}
+
+.border-\[\#BCBCBC\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(188 188 188 / var(--tw-border-opacity));
 }
 
 .border-black{
@@ -713,6 +762,10 @@ video {
 .bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-\[url\(\'\/src\/assets\/icons\/logo\.png\'\)\]{
+  background-image: url('/src/assets/icons/logo.png');
 }
 
 .bg-\[url\(\'\/src\/assets\/vector\.png\'\)\]{
@@ -740,9 +793,19 @@ video {
   padding-right: 15px;
 }
 
+.px-\[75px\]{
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
 .px-\[calc\(100vw\*0\.0114583333\)\]{
   padding-left: calc(100vw * 0.0114583333);
   padding-right: calc(100vw * 0.0114583333);
+}
+
+.py-\[5px\]{
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .py-\[9px\]{
@@ -753,6 +816,20 @@ video {
 .py-\[calc\(100vh\*0\.025\)\]{
   padding-top: calc(100vh * 0.025);
   padding-bottom: calc(100vh * 0.025);
+}
+
+.px-\[17px\]{
+  padding-left: 17px;
+  padding-right: 17px;
+}
+
+.px-\[1px\]{
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.pl-\[18px\]{
+  padding-left: 18px;
 }
 
 .pt-\[37px\]{
@@ -783,8 +860,16 @@ video {
   font-size: 30px;
 }
 
+.text-\[32px\]{
+  font-size: 32px;
+}
+
 .text-\[40px\]{
   font-size: 40px;
+}
+
+.text-\[70px\]{
+  font-size: 70px;
 }
 
 .text-\[80px\]{
@@ -809,6 +894,15 @@ video {
 
 .leading-\[32px\]{
   line-height: 32px;
+}
+
+.leading-\[54px\]{
+  line-height: 54px;
+}
+
+.text-\[\#121BFF\]{
+  --tw-text-opacity: 1;
+  color: rgb(18 27 255 / var(--tw-text-opacity));
 }
 
 .text-\[\#2563EB\]{
