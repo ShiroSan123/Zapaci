@@ -1,5 +1,6 @@
 <?php 
-	$tag = $_GET['tag'];
+include('server.php');
+$tag = $_GET['tag'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,38 +49,46 @@
 
 			<!-- Menu Desktop -->
 			<nav class="sm:hidden">
-			<ul class="flex items-center gap-[20px]">
+				<ul class="flex items-center gap-[20px]">
 					<li>
-						<a href="add.php?tag=1"
-							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 1) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">добавление</a>
+
+						<a href="list.php?tag=1"
+							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 1) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">список</a>
 					</li>
 					<li>
 
-						<a href="list.php?tag=2"
-							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 2) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">список</a>
-					</li>
-					<li>
-
-						<a href="calc.php?tag=3"
-							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 3) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">калькулятор
+						<a href="calc.php?tag=2"
+							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 2) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">калькулятор
 						</a>
 					</li>
 					<li>
 
-						<a href="recom.php?tag=4"
-							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 4) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">рекомендации
+						<a href="recom.php?tag=3"
+							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 3) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">рекомендации
 						</a>
 					</li>
 				</ul>
 			</nav>
 
 			<!-- Actions -->
+			<!-- Check for auth -->
+			<?php if(isset($_SESSION['phone'])){ ?>
 			<div class="flex items-center gap-[30px] md:hidden -translate-y-4">
-				<a href="#" class="flex items-center gap-1">
-					<span
-						class="font-bold text-[25px] bg-[#2563EB] rounded-[50px] py-[9px] px-[15px] leading-[32px] text-white">профиль</span>
+				<a href="Profile.php" class="flex items-center gap-1">
+					<span class="font-bold text-[25px] leading-[22px]"><?php echo $stroka['Name'] ?></span>
 				</a>
 			</div>
+			<?php } else { ?>
+			<div class="flex items-center gap-[30px] md:hidden -translate-y-4">
+				<a href="auth.php?log=2" class="flex items-center gap-1">
+					<span class="font-bold text-[25px] leading-[22px]">вход</span>
+				</a>
+				<a href="auth.php?log=1" class="flex items-center gap-1">
+					<span
+						class="font-bold text-[25px] bg-[#2563EB] rounded-[50px] py-[9px] px-[15px] leading-[32px] text-white">регистрация</span>
+				</a>
+			</div>
+			<?php }?>
 		</header>
 
 		<section class="text-center max-w-[1144px] max-h-[320px] ml-[calc(100vw*0.086458)]">

@@ -6,8 +6,7 @@ module.exports = {
 		'./add.php',
 		'./auth.php',
 		'./calc.php',
-		'./list.php',
-		'./src/**/*.{html,js,php}'
+		'./recom.php',
 	],
 	theme: {
 		screens: {
