@@ -40,7 +40,7 @@
 	<div class="lineTop w-screen opacity-50 top-[calc(100vh*0.90740)]"></div>
 
 	<section class="h-full">
-		<header class="flex justify-between max-w-[1416px] mx-auto pt-[37px]">
+	<header class="flex justify-between max-w-[1416px] mx-auto pt-[37px]">
 			<!-- Logo -->
 			<a href="index.php" class="text-[40px] font-extrabold font-manrope -translate-y-4">
 				Запасись
@@ -51,18 +51,18 @@
 				<ul class="flex items-center gap-[20px]">
 					<li>
 
-						<a href="list.php?tag=1"
+						<a href="<?php if(isset($_SESSION['Phone'])){ ?>list.php?tag=1<?php } else { ?>auth.php?log=1<?php } ?>"
 							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 1) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">список</a>
 					</li>
 					<li>
 
-						<a href="calc.php?tag=2"
+						<a href="<?php if(isset($_SESSION['Phone'])){ ?>calc.php?tag=2<?php } else { ?>auth.php?log=1<?php } ?>"
 							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 2) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">калькулятор
 						</a>
 					</li>
 					<li>
 
-						<a href="recom.php?tag=3"
+						<a href="<?php if(isset($_SESSION['Phone'])){ ?>recom.php?tag=3<?php } else { ?>auth.php?log=1<?php } ?>"
 							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 3) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">рекомендации
 						</a>
 					</li>

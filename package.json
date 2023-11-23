@@ -7,8 +7,19 @@
 		"start": "npx tailwindcss -i ./src/css/input.css -o ./src/css/style.css --watch"
 	},
 	"devDependencies": {
+		"gulp": "^4.0.2",
+		"gulp-clean": "^0.4.0",
+		"gulp-file-include": "^2.3.0",
+		"gulp-group-css-media-queries": "^1.2.2",
+		"gulp-notify": "^4.0.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-rigger": "^0.5.8",
+		"gulp-sass": "^5.1.0",
+		"gulp-server-livereload": "^1.9.2",
+		"gulp-sourcemaps": "^3.0.0",
 		"prettier": "^3.0.3",
 		"prettier-plugin-tailwindcss": "^0.5.4",
+		"sass": "^1.69.5",
 		"tailwindcss": "^3.3.3"
 	}
 }
