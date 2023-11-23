@@ -11,9 +11,11 @@ $db = mysqli_connect('localhost','root','','Zapaci') or die("could not connect t
 
 // Info
 $connect = mysqli_connect("127.0.0.1",'root',"","Zapaci");
-$query = "SELECT * FROM Users WHERE Phone='{$_SESSION['phone']}'";
-$result = mysqli_query($connect, $query);
-$stroka = $result->fetch_assoc();
+if(isset($_SESSION['Phone'])){
+	$query = "SELECT * FROM Users WHERE Phone='{$_SESSION['Phone']}'";
+	$result = mysqli_query($connect, $query);
+	$stroka = $result->fetch_assoc();
+}
 
 // Register user
 if(isset($_POST['reg_user'])){
@@ -26,7 +28,7 @@ if(isset($_POST['reg_user'])){
 	$pass2 = mysqli_real_escape_string($db, $_POST['Pass2']);
 
 	// Form validation
-	if($password_1 != $password_2){array_push($errors, "Passwords do not match");};
+	if($pass1 != $pass2){array_push($errors, "Passwords do not match");};
 
 	// Check db for existing user with same username
 
@@ -48,7 +50,7 @@ if(isset($_POST['reg_user'])){
 		$query = "INSERT INTO Users (Name,Surname,Patronymic,Phone,Pass,Corp) VALUES ('$name','$surname','$patronymic','$phone','$pass1','$corp')";
 
 		mysqli_query($db,$query);
-		$_SESSION['phone'] = $phone;
+		$_SESSION['Phone'] = $phone;
 		$_SESSION['success'] = "You are now logged in";
 
 		// Transfer to index.php
@@ -74,9 +76,7 @@ if(isset($_POST['login_user'])){
 		$result = mysqli_query($db, $query);
 
 		if(mysqli_num_rows($result)){
-			$_SESSION['phone'] = $phone;
-			$_SESSION['logout'] = "Success";
-			$_SESSION['success'] = "Logged is successfully";
+			$_SESSION['Phone'] = $phone;
 			header("location: index.php");
 		} else {
 			array_push($errors, "Wrong username/password combination. Please try again.");

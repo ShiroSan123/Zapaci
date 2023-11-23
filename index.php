@@ -1,16 +1,6 @@
 <?php
 include('server.php');
 session_start();
-
-if(isset($_SESSION['phone'])){
-	$_SESSION['msg'] = "You must log in first to view this page";
-}
-
-if(isset($_GET['logout'])){
-	session_destroy();
-	unset($_SESSION['phone']);
-	header("location: auth.php?log=2");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +42,7 @@ if(isset($_GET['logout'])){
 	<section class="h-full">
 		<header class="flex justify-between max-w-[1416px] mx-auto pt-[37px]">
 			<!-- Logo -->
-			<a href="#" class="text-[40px] font-extrabold font-manrope -translate-y-4">
+			<a href="index.php" class="text-[40px] font-extrabold font-manrope -translate-y-4">
 				Запасись
 			</a>
 
@@ -61,18 +51,18 @@ if(isset($_GET['logout'])){
 				<ul class="flex items-center gap-[20px]">
 					<li>
 
-						<a href="list.php?tag=1"
+						<a href="<?php if(isset($_SESSION['Phone'])){ ?>list.php?tag=1<?php } else { ?>auth.php?log=1<?php } ?>"
 							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 1) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">список</a>
 					</li>
 					<li>
 
-						<a href="calc.php?tag=2"
+						<a href="<?php if(isset($_SESSION['Phone'])){ ?>calc.php?tag=2<?php } else { ?>auth.php?log=1<?php } ?>"
 							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 2) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">калькулятор
 						</a>
 					</li>
 					<li>
 
-						<a href="recom.php?tag=3"
+						<a href="<?php if(isset($_SESSION['Phone'])){ ?>recom.php?tag=3<?php } else { ?>auth.php?log=1<?php } ?>"
 							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 3) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">рекомендации
 						</a>
 					</li>
@@ -81,9 +71,9 @@ if(isset($_GET['logout'])){
 
 			<!-- Actions -->
 			<!-- Check for auth -->
-			<?php if(isset($_SESSION['phone'])){ ?>
+			<?php if(isset($_SESSION['Phone'])){ ?>
 			<div class="flex items-center gap-[30px] md:hidden -translate-y-4">
-				<a href="Profile.php" class="flex items-center gap-1">
+				<a href="profile.php" class="flex items-center gap-1">
 					<span class="font-bold text-[25px] bg-[#2563EB] rounded-[50px] py-[9px] px-[15px] leading-[32px] text-white"><?php echo $stroka['Name'] ?></span>
 				</a>
 			</div>
@@ -110,10 +100,14 @@ if(isset($_GET['logout'])){
 				период,
 				обеспечивающий комфорт и уверенность в любых условиях.</p>
 			<div class="flex w-[calc(100vw*0.21875)] ml-[343px] mt-8 gap-5">
+				<a href="<?php if(isset($_SESSION['Phone'])){ ?>list.php<?php } else { ?>auth.php?log=1<?php } ?>">
 				<button
 					class="mx-auto rounded-[10px] bg-black py-[calc(100vh*0.025)] px-[calc(100vw*0.0114583333)] text-white text-[30px] font-bold">добавление</button>
+				</a>
+				<a href="<?php if(isset($_SESSION['Phone'])){ ?>calc.php<?php } else { ?>auth.php?log=1<?php } ?>">
 				<button
 					class="mx-auto rounded-[10px] border-[1px] border-black py-[calc(100vh*0.025)] px-[calc(100vw*0.0114583333)] text-black text-[30px] font-bold">калькулятор</button>
+				</a>
 			</div>
 		</section>
 	</section>
