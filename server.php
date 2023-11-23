@@ -17,6 +17,47 @@ if(isset($_SESSION['Phone'])){
 	$stroka = $result->fetch_assoc();
 }
 
+// Add product
+if(isset($_POST['addProduct'])){
+	$dir = "/src/assets/products/";
+	$corp = mysqli_real_escape_string($db, $_POST['corp']);
+	$product = mysqli_real_escape_string($db, $_POST['product']);
+	$life = mysqli_real_escape_string($db, $_POST['life']);
+	$count1 = mysqli_real_escape_string($db, $_POST['count1']);
+	$count2 = mysqli_real_escape_string($db, $_POST['count2']);
+	$cal = mysqli_real_escape_string($db, $_POST['cal']);
+	$destination = $dir . basename($_FILES['image']['name']);
+	$tmp_name = $_FILES["image"]["tmp_name"];
+	$name = $_FILES['image']['tmp_name'];
+	$upload = move_uploaded_file($name, $destination);
+
+	// Form validation
+	if($count1 == null and $count2 == null){
+		array_push($errors, "Passwords do not match");
+	} elseif($count1 != null){
+		$check = 1;
+	} elseif($count2 != null) {
+		$check = 2;
+	} else {
+		$check = 1;
+	}
+
+	// Register user if no error
+	if(count($errors)==0){
+		if($check == 1) {
+			$query = "INSERT INTO product (Life,Count,Product,Corp,Cal,Image) VALUES ('$life','$count1','$product','$corp','$cal','$destination')";
+		} else {
+			$query = "INSERT INTO product (Life,Count,Product,Corp,Cal,Image) VALUES ('$life','$count2','$product','$corp','$cal','$destination')";
+		}
+		
+
+		mysqli_query($db,$query);
+
+		// Transfer to index.php
+		header("location: list.php");
+	}
+}
+
 // Register user
 if(isset($_POST['reg_user'])){
 	$name = mysqli_real_escape_string($db, $_POST['Name']);

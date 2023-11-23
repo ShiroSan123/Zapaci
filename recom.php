@@ -41,7 +41,7 @@ $tag = $_GET['tag'];
 	<div class="lineTop w-screen opacity-50 top-[calc(100vh*0.90740)]"></div>
 
 	<section class="h-full">
-	<header class="flex justify-between max-w-[1416px] mx-auto pt-[37px]">
+		<header class="flex justify-between max-w-[1416px] mx-auto pt-[37px]">
 			<!-- Logo -->
 			<a href="index.php" class="text-[40px] font-extrabold font-manrope -translate-y-4">
 				Запасись
@@ -75,7 +75,10 @@ $tag = $_GET['tag'];
 			<?php if(isset($_SESSION['Phone'])){ ?>
 			<div class="flex items-center gap-[30px] md:hidden -translate-y-4">
 				<a href="profile.php" class="flex items-center gap-1">
-					<span class="font-bold text-[25px] bg-[#2563EB] rounded-[50px] py-[9px] px-[15px] leading-[32px] text-white"><?php echo $stroka['Name'] ?></span>
+					<span
+						class="font-bold text-[25px] bg-[#2563EB] rounded-[50px] py-[9px] px-[15px] leading-[32px] text-white">
+						<?php echo $stroka['Name'] ?>
+					</span>
 				</a>
 			</div>
 			<?php } else { ?>
@@ -91,12 +94,172 @@ $tag = $_GET['tag'];
 			<?php }?>
 		</header>
 
-		<section class="text-center max-w-[1144px] max-h-[320px] ml-[calc(100vw*0.086458)]">
+		<section class="text-center">
 			<h1
-				class="w-[818px] text-[#2563EB] text-[80px] font-bold leading-[107px] bg-[url('/src/assets/vector2.png')] bg-no-repeat bg-contain bg-bottom">
+				class="w-[calc(100vw*0.42604166)] text-[#2563EB] text-[80px] font-bold leading-[107px] bg-[url('/src/assets/vector2.png')] bg-no-repeat bg-contain bg-bottom ml-[calc(100vw*0.086458)]">
 				Рекомендации.</h1>
-			<div class="flex gap-[33px] mt-[31px]">
-				<p class="text-[30px] font-bold">Категория</p>
+			<div class="w-[calc(100vw*0.83125)] grid grid-cols-2 gap-x-[20px] mx-auto mt-5">
+				<div class="w-[calc(100vw*0.410416666)] relative gap-y-5 grid">
+					<h1 class="text-[70px] font-bold leading-[120px] text-[#2563EB] text-left">скоро закончится
+					</h1>
+					<div
+						class="relative w-[calc(100vw*0.410416666)] h-[calc(100vh*0.1509259259)] border border-dashed border-black rounded-[10px] pl-[22px]">
+						<div
+							class="rounded-full border-2 border-black border-dashed px-2 py-2 absolute right-[10px] top-[10px] w-[30px] h-[30px]">
+							<h1 class="-translate-y-[5px] font-semibold">X</h1>
+						</div>
+						<div class="grid grid-cols-2">
+							<div class="w-[385px] text-left">
+								<h1 class="text-[40px] font-semibold">Кефир “Сквашино”</h1>
+								<button
+									class="mt-[8px] text-[25px] font-bold text-white py-[12px] px-[90px] rounded-[10px] bg-[#2563EB]">заказать</button>
+							</div>
+							<div class="w-[338px] text-left pt-[calc(100vh*0.030555)] grid gap-y-[9px]">
+								<p class="text-[20px] font-normal">в скором времени товар закончится</p>
+								<section class="flex justify-between">
+									<p class="text-[20px] font-normal" name="ost">осталось</p>
+									<p class="text-[15px] text-[#808080] font-normal">12 шт.</p>
+								</section>
+								<section class="flex justify-between">
+									<p class="text-[20px] font-normal" name="ost">калорий</p>
+									<p class="text-[15px] text-[#808080] font-normal">360 кал.</p>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div
+						class="relative w-[calc(100vw*0.410416666)] h-[calc(100vh*0.1509259259)] border border-dashed border-black rounded-[10px] pl-[22px]">
+						<div
+							class="rounded-full border-2 border-black border-dashed px-2 py-2 absolute right-[10px] top-[10px] w-[30px] h-[30px]">
+							<h1 class="-translate-y-[5px] font-semibold">X</h1>
+						</div>
+						<div class="grid grid-cols-2">
+							<div class="w-[385px] text-left">
+								<h1 class="text-[40px] font-semibold">Кефир “Сквашино”</h1>
+								<button
+									class="mt-[8px] text-[25px] font-bold text-white py-[12px] px-[90px] rounded-[10px] bg-[#2563EB]">заказать</button>
+							</div>
+							<div class="w-[338px] text-left pt-[calc(100vh*0.030555)] grid gap-y-[9px]">
+								<p class="text-[20px] font-normal">в скором времени товар закончится</p>
+								<section class="flex justify-between">
+									<p class="text-[20px] font-normal" name="ost">осталось</p>
+									<p class="text-[15px] text-[#808080] font-normal">12 шт.</p>
+								</section>
+								<section class="flex justify-between">
+									<p class="text-[20px] font-normal" name="ost">калорий</p>
+									<p class="text-[15px] text-[#808080] font-normal">360 кал.</p>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div
+						class="relative w-[calc(100vw*0.410416666)] h-[calc(100vh*0.1509259259)] border border-dashed border-black rounded-[10px] pl-[22px]">
+						<div
+							class="rounded-full border-2 border-black border-dashed px-2 py-2 absolute right-[10px] top-[10px] w-[30px] h-[30px]">
+							<h1 class="-translate-y-[5px] font-semibold">X</h1>
+						</div>
+						<div class="grid grid-cols-2">
+							<div class="w-[385px] text-left">
+								<h1 class="text-[40px] font-semibold">Кефир “Сквашино”</h1>
+								<button
+									class="mt-[8px] text-[25px] font-bold text-white py-[12px] px-[90px] rounded-[10px] bg-[#2563EB]">заказать</button>
+							</div>
+							<div class="w-[338px] text-left pt-[calc(100vh*0.030555)] grid gap-y-[9px]">
+								<p class="text-[20px] font-normal">в скором времени товар закончится</p>
+								<section class="flex justify-between">
+									<p class="text-[20px] font-normal" name="ost">осталось</p>
+									<p class="text-[15px] text-[#808080] font-normal">12 шт.</p>
+								</section>
+								<section class="flex justify-between">
+									<p class="text-[20px] font-normal" name="ost">калорий</p>
+									<p class="text-[15px] text-[#808080] font-normal">360 кал.</p>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="w-[calc(100vw*0.410416666)] grid gap-y-5">
+					<h1 class="text-[70px] font-bold leading-[120px] text-[#2563EB] text-left">скоро испортятся
+					</h1>
+					<div
+						class="relative w-[calc(100vw*0.410416666)] h-[calc(100vh*0.1509259259)] border border-dashed border-black rounded-[10px] pl-[22px]">
+						<div
+							class="rounded-full border-2 border-black border-dashed px-2 py-2 absolute right-[10px] top-[10px] w-[30px] h-[30px]">
+							<h1 class="-translate-y-[5px] font-semibold">X</h1>
+						</div>
+						<div class="grid grid-cols-2">
+							<div class="w-[385px] text-left">
+								<h1 class="text-[40px] font-semibold">Кефир “Сквашино”</h1>
+								<button
+									class="mt-[8px] text-[25px] font-bold text-white py-[12px] px-[75px] rounded-[10px] bg-[#2563EB]">удалить
+									из списка</button>
+							</div>
+							<div class="w-[338px] text-left pt-[calc(100vh*0.030555)] grid gap-y-[9px]">
+								<p class="text-[20px] font-normal">в скором времени товар испортится</p>
+								<section class="flex justify-between">
+									<p class="text-[20px] font-normal" name="ost">осталось дней</p>
+									<p class="text-[15px] text-[#808080] font-normal">12</p>
+								</section>
+								<section class="flex justify-between">
+									<p class="text-[20px] font-normal" name="ost">осталось штук</p>
+									<p class="text-[15px] text-[#808080] font-normal">35</p>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div
+						class="relative w-[calc(100vw*0.410416666)] h-[calc(100vh*0.1509259259)] border border-dashed border-black rounded-[10px] pl-[22px]">
+						<div
+							class="rounded-full border-2 border-black border-dashed px-2 py-2 absolute right-[10px] top-[10px] w-[30px] h-[30px]">
+							<h1 class="-translate-y-[5px] font-semibold">X</h1>
+						</div>
+						<div class="grid grid-cols-2">
+							<div class="w-[385px] text-left">
+								<h1 class="text-[40px] font-semibold">Кефир “Сквашино”</h1>
+								<button
+									class="mt-[8px] text-[25px] font-bold text-white py-[12px] px-[75px] rounded-[10px] bg-[#2563EB]">удалить
+									из списка</button>
+							</div>
+							<div class="w-[338px] text-left pt-[calc(100vh*0.030555)] grid gap-y-[9px]">
+								<p class="text-[20px] font-normal">в скором времени товар испортится</p>
+								<section class="flex justify-between">
+									<p class="text-[20px] font-normal" name="ost">осталось дней</p>
+									<p class="text-[15px] text-[#808080] font-normal">12</p>
+								</section>
+								<section class="flex justify-between">
+									<p class="text-[20px] font-normal" name="ost">осталось штук</p>
+									<p class="text-[15px] text-[#808080] font-normal">35</p>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div
+						class="relative w-[calc(100vw*0.410416666)] h-[calc(100vh*0.1509259259)] border border-dashed border-black rounded-[10px] pl-[22px]">
+						<div
+							class="rounded-full border-2 border-black border-dashed px-2 py-2 absolute right-[10px] top-[10px] w-[30px] h-[30px]">
+							<h1 class="-translate-y-[5px] font-semibold">X</h1>
+						</div>
+						<div class="grid grid-cols-2">
+							<div class="w-[385px] text-left">
+								<h1 class="text-[40px] font-semibold">Кефир “Сквашино”</h1>
+								<button
+									class="mt-[8px] text-[25px] font-bold text-white py-[12px] px-[75px] rounded-[10px] bg-[#2563EB]">удалить
+									из списка</button>
+							</div>
+							<div class="w-[338px] text-left pt-[calc(100vh*0.030555)] grid gap-y-[9px]">
+								<p class="text-[20px] font-normal">в скором времени товар испортится</p>
+								<section class="flex justify-between">
+									<p class="text-[20px] font-normal" name="ost">осталось дней</p>
+									<p class="text-[15px] text-[#808080] font-normal">12</p>
+								</section>
+								<section class="flex justify-between">
+									<p class="text-[20px] font-normal" name="ost">осталось штук</p>
+									<p class="text-[15px] text-[#808080] font-normal">35</p>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	</section>

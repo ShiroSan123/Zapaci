@@ -93,20 +93,104 @@ $tag = $_GET['tag'];
 			<?php }?>
 		</header>
 
-		<section>
-			<h1 class="text-[30px]">
-				<?php echo $stroka['Name'] ?>
-			</h1>
-			<h1 class="text-[30px]">
-				<?php echo $stroka['Surname'] ?>
-			</h1>
-			<h1 class="text-[30px]">
-				<?php echo $stroka['Phone'] ?>
-			</h1>
-			<h1 class="text-[30px]">
-				<?php echo $stroka['Corp'] ?>
-			</h1>
-			<a class="text-[30px] text-red-800" href="logout.php">Выйти</a>
+		<section class="w-[1551px] mx-auto">
+			<h1
+				class="w-[420px] text-[#2563EB] text-[80px] font-bold leading-[107px] bg-[url('/src/assets/vector2.png')] bg-no-repeat bg-contain bg-bottom">
+				Профиль</h1>
+			<div class="flex mt-6">
+				<!-- Left column -->
+				<div class="w-[600px]">
+					<h1 class="text-[40px] font-bold">Привет,
+						<?php echo $stroka['Name'] ?>!
+					</h1>
+					<p class="text-[20px] mt-6">возвращением, надеюсь, ты сегодня хорошо себя чувствуешь</p>
+					<div class="flex mt-2">
+						<div
+							class="w-[140px] h-[140px] rounded-full bg-[#2563EB] bg-[url('/src/assets/Icons/Icon.png')] bg-no-repeat bg-cover">
+						</div>
+						<div class="pl-5 pt-6">
+							<h1 class="text-[16px]">Верхоянск</h1>
+							<p class="text-[16px]">На <span class="text-[#2563EB]">запасись</span> с 21 ноября 2023</p>
+						</div>
+					</div>
+					<h1 id="personBtn" class="text-[20px] text-[#2563EB] w-[160px] mt-4" onclick="personInfo()">
+						Личные данные</h1>
+					<h1 id="shopBtn" class="text-[20px] w-[180px] mt-4" onclick="shopInfo()">
+						Данные магазина</h1>
+					<a href="logout.php" class="text-red-600 underline text-[20px] mt-2">Выйти из аккаунта</a>
+				</div>
+				<!--Right column  -->
+				<!-- Personal information -->
+				<div id="personId"
+					class="w-[856px] pb-[50px] border-black border border-dashed rounded-lg pl-[26px] pt-[33px]">
+					<h1 class="text-[32px] font-medium">Личные данные</h1>
+					<div class="flex h-[calc(100vh*0.391111111111)] w-full mt-5">
+						<div class="border w-1/4 h-full grid gap-y-[25px]">
+							<p class="text-[16px] text-[#4D4D4D]">Имя</p>
+							<p class="text-[16px] text-[#4D4D4D]">Телефон</p>
+							<p class="text-[16px] text-[#4D4D4D]">Город</p>
+							<p class="text-[16px] text-[#4D4D4D]">E-mail</p>
+							<p class="text-[16px] text-[#4D4D4D]">ИНН</p>
+							<p class="text-[16px] text-[#4D4D4D]">СНИЛС</p>
+							<p class="text-[16px] text-[#4D4D4D]">Серия Паспорта РФ</p>
+							<p class="text-[16px] text-[#4D4D4D]">Номер Паспорта РФ</p>
+
+						</div>
+						<div class="border w-2/4 h-full grid gap-y-[25px]">
+							<p class="text-[16px] text-[#4D4D4D]">Ренат Харлампьев</p>
+							<p class="text-[16px] text-[#4D4D4D]">+ 7 (228) 999-55-12</p>
+							<p class="text-[16px] text-[#4D4D4D]">Верхоянск</p>
+							<p class="text-[16px] text-[#4D4D4D]">shiruisan2005@gmail.com</p>
+							<p class="text-[16px] text-[#4D4D4D]">509876567897678911111123</p>
+							<p class="text-[16px] text-[#4D4D4D]">160 52-45-67</p>
+							<p class="text-[16px] text-[#4D4D4D]">9818</p>
+							<p class="text-[16px] text-[#4D4D4D]">821585</p>
+						</div>
+						<div class="border w-1/4 h-full grid gap-y-[25px]">
+							<p class="text-[16px] text-[#2563EB] underline">Редактировать</p>
+							<p class="text-[16px] text-[#2563EB] underline">Изменить</p>
+							<p class="text-[16px] text-[#2563EB] underline">Указать</p>
+							<p class="text-[16px] text-[#2563EB] underline">Редактировать</p>
+							<p class="text-[16px] text-[#2563EB] underline">Не подтверждено</p>
+							<p class="text-[16px] text-[#2563EB] underline">Не подтверждено</p>
+							<p class="text-[16px] text-[#2563EB] underline">Не подтверждено</p>
+							<p class="text-[16px] text-[#2563EB] underline">Не подтверждено</p>
+						</div>
+					</div>
+				</div>
+				<!-- Shop information -->
+				<div id="shopId"
+					class="w-[856px] pb-[50px] border-black border border-dashed rounded-lg pl-[26px] pt-[33px]"
+					style="display: none;">
+					<h1 class="text-[32px] font-medium">Данные магазина</h1>
+					<div class="flex h-[calc(100vh*0.391111111111)] w-full mt-5">
+						<div class="border w-1/4 h-full grid gap-y-[25px]">
+							<p class="text-[16px] text-[#4D4D4D]">Название</p>
+							<p class="text-[16px] text-[#4D4D4D]">Город</p>
+							<p class="text-[16px] text-[#4D4D4D]">Адрес</p>
+							<p class="text-[16px] text-[#4D4D4D]">Контакты</p>
+							<p class="text-[16px] text-[#4D4D4D]">Номер закупщика</p>
+
+						</div>
+						<div class="border w-2/4 h-full grid gap-y-[25px]">
+							<p class="text-[16px] text-[#4D4D4D]">У Рената</p>
+							<p class="text-[16px] text-[#4D4D4D]">Верхоянск</p>
+							<p class="text-[16px] text-[#4D4D4D]">с. Пригородное ул. Ольховая 7</p>
+							<p class="text-[16px] text-[#4D4D4D]">+7 (999) 878-67-12</p>
+							<p class="text-[16px] text-[#4D4D4D]">+7 (999) 878-67-15</p>
+						</div>
+						<div class="border w-1/4 h-full grid gap-y-[25px]">
+							<p class="text-[16px] text-[#2563EB] underline">Редактировать</p>
+							<p class="text-[16px] text-[#2563EB] underline">Изменить</p>
+							<p class="text-[16px] text-[#2563EB] underline">Указать</p>
+							<p class="text-[16px] text-[#2563EB] underline">Редактировать</p>
+							<p class="text-[16px] text-[#2563EB] underline">Редактировать</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script src="src/js/main.js"></script>
 		</section>
 	</section>
 </body>

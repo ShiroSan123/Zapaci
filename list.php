@@ -40,6 +40,7 @@ $tag = $_GET['tag'];
 	<div class="z-10 lineTop w-screen opacity-50 top-[calc(100vh*0.90740)]"></div>
 
 	<section class="h-full">
+		<!-- Header -->
 		<header class="flex justify-between max-w-[1416px] mx-auto pt-[37px]">
 			<!-- Logo -->
 			<a href="index.php" class="text-[40px] font-extrabold font-manrope -translate-y-4">
@@ -93,21 +94,62 @@ $tag = $_GET['tag'];
 			<?php }?>
 		</header>
 
+		<!-- List of products -->
 		<section class="text-center">
 			<h1
 				class="ml-[calc(100vw*0.086458)] w-[818px] text-[#2563EB] text-[80px] font-bold leading-[107px] bg-[url('/src/assets/vector2.png')] bg-no-repeat bg-contain bg-bottom">
 				Список товаров.</h1>
-			<div class="w-[1316px] grid grid-cols-5 gap-x-[67px] gap-y-[18px] mx-auto mt-5">
-				<div class="w-[210px] h-[254px] border-dashed border border-[#5E5E5E80] rounded-[5px]">
+			<div id="listProduct" class="w-[1316px] grid grid-cols-5 gap-x-[67px] gap-y-[18px] mx-auto mt-5">
+				<?php
+					$con = mysqli_connect('127.0.0.1','root','','Zapaci');
+					$query = mysqli_query($con, "SELECT * FROM product");
+					$num = mysqli_num_rows($query);
+	 				for($i=0;$i<$num;$i++){	
+	 				$stroka = $query->fetch_assoc();
+				?>
+				<div class="w-[210px] h-[254px] border-dashed border border-[#5E5E5E80] rounded-[5px]"
+					onclick="viewProduct()">
 					<div
-						class="w-full h-[210px] bg-[url('/src/assets/products/1.jpg')] bg-no-repeat bg-cover bg-center rounded-[5px]">
+						class="w-full h-[210px] bg-[url('/src/assets/products/2.jpg')] bg-no-repeat bg-cover bg-center rounded-[5px]">
 					</div>
-					<div class="flex pl-[7px] mt-[5px]">
-						<h1 class="text-[20px] font-bold">Гречка</h1>
-						<ul class="ml-[15px]">
-							<li class="text-[10px]">калорийность:</li>
-							<li class="text-[10px]">срок годности:</li>
+					<div class="flex pl-[7px] mt-[5px] justify-between pr-[22px]">
+						<h1 class="text-[20px] font-bold">
+							<?php echo $stroka['Product'] ?>
+						</h1>
+						<ul class="">
+							<li class="text-[10px]">калорийность:
+								<?php echo $stroka['Cal'] ?>
+							</li>
+							<li class="text-[10px]">срок годности:
+								<?php echo $stroka['Life'] ?>
+							</li>
 						</ul>
+					</div>
+				</div>
+				<?php } ?>
+			</div>
+			<div id="mainProduct"
+				class="pl-6 pt-10 pb-[30px] w-[1316px] grid grid-cols-5 gap-x-[67px] gap-y-[18px] mx-auto mt-5 border border-dashed border-[#AEAEAE]"
+				style="display: none;">
+				<div class="3/5">
+					<div
+						class="w-[calc(100vw*0.3942708)] h-[calc(100vh*0.19907407)] bg-[url('/src/assets/products/govno.png')] bg-no-repeat bg-cover">
+
+					</div>
+					<h1 class="text-[60px] font-bold">Гречка длиннозерная</h1>
+					<div class="flex w-full justify-between">
+						<div class="grid gap-y-[26px] text-left w-[calc(100vw*0.125)]">
+							<p class="text-[20px] font-medium">Название магазина</p>
+							<p class="text-[20px] font-medium">Наименование товара</p>
+							<p class="text-[20px] font-medium">Срок годности в днях</p>
+							<p class="text-[20px] font-medium">Количества товара в кг. или в штуках</p>
+						</div>
+						<div class="grid gap-y-[26px] text-right w-[calc(100vw*0.125)]">
+							<p class="text-[20px] text-[#343537]">GetLet</p>
+							<p class="text-[20px] text-[#343537]">Гречка длиннозерная</p>
+							<p class="text-[20px] text-[#343537]">620 дней</p>
+							<p class="text-[20px] text-[#343537]">3 пакета</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -117,6 +159,7 @@ $tag = $_GET['tag'];
 			</button>
 		</section>
 
+		<!-- Add product -->
 		<section style="display: none;" id="blockAdd" class="">
 			<div class="w-screen h-screen bg-black opacity-[78%] fixed top-0" onclick="invisAdd()">
 
@@ -128,7 +171,7 @@ $tag = $_GET['tag'];
 					Добавление товаров.</h1>
 				<div class="flex pt-[56px]">
 					<div class="w-[calc(100vw*0.3098958)]">
-						<form action="server.php" method="POST" class="gap-y-[30px] grid">
+						<form action="server.php" method="POST" class="gap-y-[30px] grid" enctype="multipart/form-data">
 							<div class="justify-between flex">
 								<label for="corp" class="text-[20px] font-semibold">Название магазина</label>
 								<input
@@ -138,35 +181,42 @@ $tag = $_GET['tag'];
 							<div class="justify-between flex">
 								<label for="corp" class="text-[20px] font-semibold">Наименование товара<span
 										class="text-[20px] text-red-600">*</span></label>
-								<input
+								<input required
 									class="mt-[3px] h-[24px] w-[calc(100vw*0.144270833)] rounded-[5px] border border-[#808080]"
 									type="text" name="product">
 							</div>
 							<div class="justify-between flex">
 								<label for="corp" class="text-[20px] font-semibold">Срок годности в днях<span
 										class="text-[20px] text-red-600">*</span></label>
-								<input
+								<input required
 									class="mt-[3px] h-[24px] w-[calc(100vw*0.144270833)] rounded-[5px] border border-[#808080]"
-									type="text" name="life">
+									type="number" pattern="[0-9]+" name="life">
 							</div>
 							<div class="justify-between flex">
 								<label for="corp" class="text-[20px] font-semibold">Количества товара в кг.</label>
 								<input
 									class="mt-[3px] h-[24px] w-[calc(100vw*0.144270833)] rounded-[5px] border border-[#808080]"
-									type="text" name="count1">
+									type="number" pattern="[0-9]+" name="count1">
 							</div>
 							<div class="justify-between flex">
 								<label for="corp" class="text-[20px] font-semibold">Количества товара в штуках</label>
 								<input
 									class="mt-[3px] h-[24px] w-[calc(100vw*0.144270833)] rounded-[5px] border border-[#808080]"
-									type="text" name="count2">
+									type="number" pattern="[0-9]+" name="count2">
 							</div>
 							<div class="justify-between flex">
 								<label for="corp" class="text-[20px] font-semibold">Количество калорий на товар<span
 										class="text-[20px] text-red-600">*</span></label>
-								<input
+								<input required
 									class="mt-[3px] h-[24px] w-[calc(100vw*0.144270833)] rounded-[5px] border border-[#808080]"
-									type="text" name="cal">
+									type="number" pattern="[0-9]+" name="cal">
+							</div>
+							<div class="justify-between flex">
+								<label for="corp" class="text-[20px] font-semibold">Количество калорий на товар<span
+										class="text-[20px] text-red-600">*</span></label>
+								<input required
+									class="mt-[3px] h-[24px] w-[calc(100vw*0.144270833)] rounded-[5px] border border-[#808080]"
+									type="file" name="image">
 							</div>
 							<button name="addProduct"
 								class="text-white py-[2px] px-[96px] bg-[#2563EB] w-[277px] h-[46px] rounded-[30px] ml-auto">
