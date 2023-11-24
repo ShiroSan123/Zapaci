@@ -4,7 +4,7 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Sky+Flow+team+developer;I+like+coffee+and+cola;I+like+eat;Learning+smth+new)](https://git.io/typing-svg)
 
 # Hack-The-Ice 5.0 Old
-Наш проект [Запасись][(«Classified»](https://www.figma.com/file/bIK4WzwSEQAIVF87ykpfXv/%D0%B7%D0%B0%D0%BF%D0%B0%D1%81%D0%B8%D1%81%D1%8C?type=design&node-id=307%3A1807&mode=dev))
+Наш проект [Запасись](https://www.figma.com/file/bIK4WzwSEQAIVF87ykpfXv/%D0%B7%D0%B0%D0%BF%D0%B0%D1%81%D0%B8%D1%81%D1%8C?type=design&node-id=307%3A1807&mode=dev))
 ***
 Инструменты: Visual Studio Code, Spotify, NumPy, Pandas
 ***
