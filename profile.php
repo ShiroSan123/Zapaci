@@ -56,14 +56,20 @@ $tag = $_GET['tag'];
 					</li>
 					<li>
 
-						<a href="<?php if(isset($_SESSION['Phone'])){ ?>calc.php?tag=2<?php } else { ?>auth.php?log=1<?php } ?>"
-							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 2) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">калькулятор
+						<a href="<?php if(isset($_SESSION['Phone'])){ ?>https://goo.su/pjwJ<?php } else { ?>auth.php?log=1<?php } ?>"
+							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 4) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">статистика
 						</a>
 					</li>
 					<li>
 
 						<a href="<?php if(isset($_SESSION['Phone'])){ ?>recom.php?tag=3<?php } else { ?>auth.php?log=1<?php } ?>"
 							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 3) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">рекомендации
+						</a>
+					</li>
+					<li>
+
+						<a href="<?php if(isset($_SESSION['Phone'])){ ?>calc.php?tag=2<?php } else { ?>auth.php?log=1<?php } ?>"
+							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 2) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">прогноз
 						</a>
 					</li>
 				</ul>
@@ -146,7 +152,7 @@ $tag = $_GET['tag'];
 							<p class="text-[16px] text-[#4D4D4D]">9818</p>
 							<p class="text-[16px] text-[#4D4D4D]">821585</p>
 						</div>
-						<div class="border w-1/4 h-full grid gap-y-[25px]">
+						<div class="border w-1/4 h-full grid gap-y-[25px]" style="display: none;">
 							<p class="text-[16px] text-[#2563EB] underline">Редактировать</p>
 							<p class="text-[16px] text-[#2563EB] underline">Изменить</p>
 							<p class="text-[16px] text-[#2563EB] underline">Указать</p>
@@ -179,7 +185,7 @@ $tag = $_GET['tag'];
 							<p class="text-[16px] text-[#4D4D4D]">+7 (999) 878-67-12</p>
 							<p class="text-[16px] text-[#4D4D4D]">+7 (999) 878-67-15</p>
 						</div>
-						<div class="border w-1/4 h-full grid gap-y-[25px]">
+						<div class="border w-1/4 h-full grid gap-y-[25px]" style="display: none;">
 							<p class="text-[16px] text-[#2563EB] underline">Редактировать</p>
 							<p class="text-[16px] text-[#2563EB] underline">Изменить</p>
 							<p class="text-[16px] text-[#2563EB] underline">Указать</p>

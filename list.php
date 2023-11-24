@@ -57,14 +57,20 @@ $tag = $_GET['tag'];
 					</li>
 					<li>
 
-						<a href="<?php if(isset($_SESSION['Phone'])){ ?>calc.php?tag=2<?php } else { ?>auth.php?log=1<?php } ?>"
-							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 2) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">калькулятор
+						<a href="<?php if(isset($_SESSION['Phone'])){ ?>https://goo.su/pjwJ<?php } else { ?>auth.php?log=1<?php } ?>"
+							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 4) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">статистика
 						</a>
 					</li>
 					<li>
 
 						<a href="<?php if(isset($_SESSION['Phone'])){ ?>recom.php?tag=3<?php } else { ?>auth.php?log=1<?php } ?>"
 							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 3) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">рекомендации
+						</a>
+					</li>
+					<li>
+
+						<a href="<?php if(isset($_SESSION['Phone'])){ ?>calc.php?tag=2<?php } else { ?>auth.php?log=1<?php } ?>"
+							class="font-manrope font-bold text-[25px] relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-[#2563EB] <?php if($tag == 2) { ?>scale-0 text-[#2563EB]<?php } else {?>after:scale-0<?php }?> hover:after:scale-100 after:transition-transform">прогноз
 						</a>
 					</li>
 				</ul>
@@ -110,14 +116,14 @@ $tag = $_GET['tag'];
 				<div class="w-[210px] h-[254px] border-dashed border border-[#5E5E5E80] rounded-[5px]"
 					onclick="viewProduct()">
 					<div
-						class="w-full h-[210px] bg-[url('/src/assets/products/2.jpg')] bg-no-repeat bg-cover bg-center rounded-[5px]">
+						class="w-full h-[210px] bg-[url('/src/assets/products/<?php echo $i ?>.jpg')] bg-no-repeat bg-cover bg-center rounded-[5px]">
 					</div>
 					<div class="flex pl-[7px] mt-[5px] justify-between pr-[22px]">
 						<h1 class="text-[20px] font-bold">
 							<?php echo $stroka['Product'] ?>
 						</h1>
 						<ul class="">
-							<li class="text-[10px]">калорийность:
+							<li class="text-[10px]">
 								<?php echo $stroka['Cal'] ?>
 							</li>
 							<li class="text-[10px]">срок годности:
@@ -133,11 +139,11 @@ $tag = $_GET['tag'];
 				style="display: none;">
 				<div class="3/5">
 					<div
-						class="w-[calc(100vw*0.3942708)] h-[calc(100vh*0.19907407)] bg-[url('/src/assets/products/govno.png')] bg-no-repeat bg-cover">
+						class="w-[calc(100vw*0.3942708)] h-[calc(100vh*0.19907407)] bg-[url('/src/assets/products/milk.png')] bg-no-repeat bg-cover">
 
 					</div>
-					<h1 class="text-[60px] font-bold">Гречка длиннозерная</h1>
-					<div class="flex w-full justify-between">
+					<h1 class="text-[60px] font-bold w-3/5">Milk</h1>
+					<div class="flex justify-between w-3/5">
 						<div class="grid gap-y-[26px] text-left w-[calc(100vw*0.125)]">
 							<p class="text-[20px] font-medium">Название магазина</p>
 							<p class="text-[20px] font-medium">Наименование товара</p>
